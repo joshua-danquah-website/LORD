@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Companies - Coptal</title>
+    <link rel="stylesheet" href="Project.css">
+    <link rel="stylesheet" href="companies.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Coptal</div>
+        <nav>
+            <ul>
+                <li><a href="Project.html">Home</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="companies.html" class="active">Companies</a></li>
+                <li><a href="post resume.html">Post Resume</a></li>
+                <li><a href="contact us.html">Contact us</a></li>
+            </ul>
+        </nav>
+        <div class="header-buttons">
+            <button class="login" onclick="window.location.href='login.html'">Log in</button>
+            <button class="signup" onclick="window.location.href='signup.html'">Sign up</button>
+        </div>
+    </header>
+
+    <main class="companies-page">
+        <div class="container">
+            <div class="companies-header">
+                <h1>Discover Top Companies</h1>
+                <p class="subtitle">Find the best companies hiring in Ghana</p>
+            </div>
+
+            <div class="companies-content">
+                <aside class="filters-sidebar">
+                    <div class="filter-section">
+                        <h3>Filter Companies</h3>
+                        <div class="search-box">
+                            <input type="text" id="companySearch" placeholder="Search companies...">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <h4>Location</h4>
+                            <select id="locationFilter">
+                                <option value="">All Locations</option>
+                                <option value="accra">Accra</option>
+                                <option value="kumasi">Kumasi</option>
+                                <option value="takoradi">Takoradi</option>
+                                <option value="tema">Tema</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <h4>Industry</h4>
+                            <div class="checkbox-group">
+                                <label>
+                                    <input type="checkbox" value="technology"> Technology
+                                </label>
+                                <label>
+                                    <input type="checkbox" value="finance"> Finance
+                                </label>
+                                <label>
+                                    <input type="checkbox" value="healthcare"> Healthcare
+                                </label>
+                                <label>
+                                    <input type="checkbox" value="education"> Education
+                                </label>
+                                <label>
+                                    <input type="checkbox" value="retail"> Retail
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <h4>Company Size</h4>
+                            <div class="checkbox-group">
+                                <label>
+                                    <input type="checkbox" value="1-50"> 1-50 employees
+                                </label>
+                                <label>
+                                    <input type="checkbox" value="51-200"> 51-200 employees
+                                </label>
+                                <label>
+                                    <input type="checkbox" value="201-500"> 201-500 employees
+                                </label>
+                                <label>
+                                    <input type="checkbox" value="501+"> 501+ employees
+                                </label>
+                            </div>
+                        </div>
+
+                        <button id="applyFilters" class="apply-filters-btn">Apply Filters</button>
+                        <button id="resetFilters" class="reset-filters-btn">Reset Filters</button>
+                    </div>
+                </aside>
+
+                <div class="companies-list">
+                    <div class="companies-list-header">
+                        <div class="results-count">
+                            <span id="companyCount">0</span> companies found
+                        </div>
+                        <div class="sort-options">
+                            <select id="sortCompanies">
+                                <option value="featured">Featured</option>
+                                <option value="name-asc">Name A-Z</option>
+                                <option value="name-desc">Name Z-A</option>
+                                <option value="jobs">Most Jobs</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="companiesContainer" class="companies-container">
+                        <!-- Companies will be dynamically inserted here by JavaScript -->
+                    </div>
+
+                    <div class="pagination">
+                        <button id="prevPage" disabled><i class="fas fa-chevron-left"></i> Previous</button>
+                        <span id="currentPage">Page 1</span>
+                        <button id="nextPage">Next <i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Coptal</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="press.html">Press</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="help.html">Help Center</a></li>
+                    <li><a href="guidelines.html">Guidelines</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="https://linkedin.com/company/coptal" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://twitter.com/coptal" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://facebook.com/coptal" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://instagram.com/coptal" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Coptal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="Project.js"></script>
+    <script src="companies.js"></script>
+</body>
+</html> 

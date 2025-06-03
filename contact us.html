@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Coptal</title>
+    <link rel="stylesheet" href="Project.css">
+    <link rel="stylesheet" href="contact us.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Coptal</div>
+        <nav>
+            <ul>
+                <li><a href="Project.html">Home</a></li>
+                <li><a href="#">Jobs</a></li>
+                <li><a href="#">Companies</a></li>
+                <li><a href="post resume.html">Post Resume</a></li>
+                <li><a href="contact us.html" class="active">Contact us</a></li>
+            </ul>
+        </nav>
+        <div class="header-buttons">
+            <button class="login" onclick="window.location.href='login.html'">Log in</button>
+            <button class="signup" onclick="window.location.href='signup.html'">Sign up</button>
+        </div>
+    </header>
+
+    <main class="contact-page">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-header">
+                    <h1>Get in Touch</h1>
+                    <p class="subtitle">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+                </div>
+
+                <div class="contact-info">
+                    <div class="info-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email Us</h3>
+                        <p>support@coptal.com</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-phone"></i>
+                        <h3>Call Us</h3>
+                        <p>+233 50 060 1585</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Visit Us</h3>
+                        <p>14 Ring Road Central<br>North Ridge, Accra, Ghana</p>
+                    </div>
+                </div>
+
+                <form id="contactForm" novalidate>
+                    <div class="form-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="name" placeholder="Your Full Name" required 
+                               minlength="2" autocomplete="name">
+                        <div class="validation-icon">
+                            <i class="fas fa-check-circle success-icon"></i>
+                            <i class="fas fa-exclamation-circle error-icon"></i>
+                        </div>
+                        <div class="error-message"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" placeholder="Your Email Address" required 
+                               pattern="[^@\s]+@[^@\s]+\.[^@\s]+" autocomplete="email">
+                        <div class="validation-icon">
+                            <i class="fas fa-check-circle success-icon"></i>
+                            <i class="fas fa-exclamation-circle error-icon"></i>
+                        </div>
+                        <div class="error-message"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <i class="fas fa-tag"></i>
+                        <select id="subject" required>
+                            <option value="">Select Subject</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="support">Technical Support</option>
+                            <option value="billing">Billing Question</option>
+                            <option value="partnership">Partnership Opportunity</option>
+                            <option value="feedback">Feedback</option>
+                        </select>
+                        <div class="validation-icon">
+                            <i class="fas fa-check-circle success-icon"></i>
+                            <i class="fas fa-exclamation-circle error-icon"></i>
+                        </div>
+                        <div class="error-message"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <i class="fas fa-comment-alt"></i>
+                        <textarea id="message" placeholder="Your Message" required 
+                                  minlength="10" rows="5"></textarea>
+                        <div class="validation-icon">
+                            <i class="fas fa-check-circle success-icon"></i>
+                            <i class="fas fa-exclamation-circle error-icon"></i>
+                        </div>
+                        <div class="error-message"></div>
+                    </div>
+
+                    <div class="form-options">
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter" checked>
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-text">Subscribe to our newsletter for updates and job opportunities</span>
+                            </label>
+                        </div>
+    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-loader">
+                            <i class="fas fa-spinner fa-spin"></i>
+                        </span>
+                    </button>
+                </form>
+
+                <div id="message" class="form-message" role="alert"></div>
+
+                <div class="social-connect">
+                    <p>Connect with us on social media</p>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/company/coptal" target="_blank" class="linkedin"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com/coptal" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://facebook.com/coptal" target="_blank" class="facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://instagram.com/coptal" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Coptal</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="press.html">Press</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="help.html">Help Center</a></li>
+                    <li><a href="guidelines.html">Guidelines</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="https://linkedin.com/company/coptal" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://twitter.com/coptal" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://facebook.com/coptal" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://instagram.com/coptal" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Coptal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="Project.js"></script>
+    <script src="contact us.js"></script>
+</body>
+</html>

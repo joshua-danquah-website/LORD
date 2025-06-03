@@ -1,0 +1,446 @@
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #7c3aed;
+    --text-color: #1f2937;
+    --white: #ffffff;
+    --error-color: #dc2626;
+    --success-color: #059669;
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    color: var(--text-color);
+    line-height: 1.6;
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    background-attachment: fixed;
+}
+
+.resume-page {
+    min-height: calc(100vh - 180px);
+    padding: 100px 20px 40px;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+}
+
+.resume-content {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.6s ease;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.resume-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.resume-header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0 0 12px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.025em;
+}
+
+.resume-header .subtitle {
+    color: #6b7280;
+    font-size: 1.1rem;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Form Layout */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group {
+    position: relative;
+    max-width: 320px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px 36px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    background-color: var(--white);
+    color: var(--text-color);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+    outline: none;
+}
+
+.form-group i {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    font-size: 1rem;
+    pointer-events: none;
+}
+
+/* File Upload Section */
+.file-upload-group {
+    margin: 24px auto;
+    max-width: 320px;
+    width: 100%;
+}
+
+.file-upload-area {
+    border: 2px dashed #e5e7eb;
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+    transition: var(--transition);
+    background: var(--white);
+    cursor: pointer;
+}
+
+.file-upload-area:hover,
+.file-upload-area.drag-over {
+    border-color: var(--primary-color);
+    background: rgba(37, 99, 235, 0.05);
+}
+
+.file-upload-area i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 16px;
+}
+
+.file-upload-area p {
+    color: #6b7280;
+    margin: 8px 0;
+    font-size: 1rem;
+}
+
+.file-upload-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    margin: 12px 0;
+    transition: var(--transition);
+}
+
+.file-upload-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.file-info {
+    font-size: 0.875rem;
+    color: #9ca3af;
+    margin-top: 8px;
+}
+
+/* Selected File Display */
+.selected-file {
+    background: var(--white);
+    border-radius: 12px;
+    margin-top: 16px;
+    border: 2px solid #e5e7eb;
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.file-preview-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.file-icon {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.file-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.file-name {
+    display: block;
+    color: var(--text-color);
+    font-size: 0.95rem;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.file-meta {
+    display: block;
+    color: #6b7280;
+    font-size: 0.8rem;
+    margin-top: 2px;
+}
+
+.remove-file {
+    background: none;
+    border: none;
+    color: #9ca3af;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.remove-file:hover {
+    color: var(--error-color);
+    background: rgba(220, 38, 38, 0.1);
+}
+
+.file-preview-content {
+    padding: 16px;
+    background: #f9fafb;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preview-placeholder {
+    text-align: center;
+    color: #6b7280;
+}
+
+.preview-placeholder i {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.preview-placeholder span {
+    font-size: 0.9rem;
+}
+
+/* File type icons */
+.file-icon.fa-file-pdf {
+    color: #dc2626;
+}
+
+.file-icon.fa-file-word {
+    color: #2563eb;
+}
+
+.file-icon.fa-file-alt {
+    color: #6b7280;
+}
+
+/* Submit Button */
+.submit-btn {
+    max-width: 320px;
+    width: 100%;
+    margin: 24px auto 0;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+}
+
+.submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0) 100%);
+    transition: left 0.5s ease;
+}
+
+.submit-btn:not(:disabled):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.submit-btn:not(:disabled):hover::before {
+    left: 100%;
+}
+
+.submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.submit-btn .btn-text,
+.submit-btn .btn-loader {
+    transition: var(--transition);
+}
+
+.submit-btn.loading .btn-text {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.submit-btn.loading .btn-loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    visibility: visible;
+}
+
+.submit-btn .btn-loader {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.submit-btn.success {
+    background: var(--success-color);
+}
+
+.submit-btn.error {
+    background: var(--error-color);
+}
+
+/* Form Message */
+.form-message {
+    margin-top: 20px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: var(--transition);
+}
+
+.form-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.form-message.success {
+    background: rgba(5, 150, 105, 0.1);
+    color: var(--success-color);
+}
+
+.form-message.error {
+    background: rgba(220, 38, 38, 0.1);
+    color: var(--error-color);
+}
+
+/* Validation Icons */
+.validation-icon {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+}
+
+.success-icon {
+    color: var(--success-color);
+}
+
+.error-icon {
+    color: var(--error-color);
+}
+
+.form-group.valid .success-icon,
+.form-group.invalid .error-icon {
+    display: block;
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 0.875rem;
+    margin-top: 6px;
+    display: none;
+}
+
+.form-group.invalid .error-message {
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+    .resume-page {
+        padding: 80px 16px 32px;
+    }
+
+    .resume-content {
+        padding: 24px 20px;
+        border-radius: 20px;
+    }
+
+    .resume-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .resume-header .subtitle {
+        font-size: 1rem;
+    }
+
+    .file-upload-area {
+        padding: 24px 16px;
+    }
+
+    .file-upload-area i {
+        font-size: 2rem;
+    }
+
+    .submit-btn {
+        padding: 12px 24px;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

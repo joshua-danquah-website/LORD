@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Your Resume - Coptal</title>
+    <link rel="stylesheet" href="Project.css">
+    <link rel="stylesheet" href="post resume.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Coptal</div>
+        <nav>
+            <ul>
+                <li><a href="Project.html">Home</a></li>
+                <li><a href="#">Jobs</a></li>
+                <li><a href="#">Companies</a></li>
+                <li><a href="post resume.html" class="active">Post Resume</a></li>
+                <li><a href="contact us.html">Contact us</a></li>
+            </ul>
+        </nav>
+        <div class="header-buttons">
+            <button class="login" onclick="window.location.href='login.html'">Log in</button>
+            <button class="signup" onclick="window.location.href='signup.html'">Sign up</button>
+        </div>
+    </header>
+
+    <main class="resume-page">
+        <div class="container">
+            <div class="resume-content">
+                <div class="resume-header">
+                    <h1>Upload Your Resume</h1>
+                    <p class="subtitle">Let employers find you - Upload your resume now</p>
+                </div>
+
+                <form id="resumeForm" novalidate>
+                    <div class="form-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="name" placeholder="Full Name" required 
+                               minlength="2" autocomplete="name">
+                        <div class="validation-icon">
+                            <i class="fas fa-check-circle success-icon"></i>
+                            <i class="fas fa-exclamation-circle error-icon"></i>
+                        </div>
+                        <div class="error-message"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" placeholder="Email Address" required 
+                               pattern="[^@\s]+@[^@\s]+\.[^@\s]+" autocomplete="email">
+                        <div class="validation-icon">
+                            <i class="fas fa-check-circle success-icon"></i>
+                            <i class="fas fa-exclamation-circle error-icon"></i>
+                        </div>
+                        <div class="error-message"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <i class="fas fa-phone"></i>
+                        <input type="tel" id="phone" placeholder="Phone Number" 
+                               pattern="[0-9\+\-\(\)\s]+" autocomplete="tel">
+                        <div class="validation-icon">
+                            <i class="fas fa-check-circle success-icon"></i>
+                            <i class="fas fa-exclamation-circle error-icon"></i>
+                        </div>
+                        <div class="error-message"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <i class="fas fa-briefcase"></i>
+                        <select id="experience" required>
+                            <option value="">Select Experience Level</option>
+                            <option value="entry">Entry Level (0-2 years)</option>
+                            <option value="intermediate">Intermediate (3-5 years)</option>
+                            <option value="senior">Senior (5+ years)</option>
+                            <option value="expert">Expert (10+ years)</option>
+                        </select>
+                        <div class="validation-icon">
+                            <i class="fas fa-check-circle success-icon"></i>
+                            <i class="fas fa-exclamation-circle error-icon"></i>
+                        </div>
+                        <div class="error-message"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <i class="fas fa-tags"></i>
+                        <input type="text" id="skills" placeholder="Key Skills (e.g., JavaScript, Project Management)" required>
+                        <div class="validation-icon">
+                            <i class="fas fa-check-circle success-icon"></i>
+                            <i class="fas fa-exclamation-circle error-icon"></i>
+                        </div>
+                        <div class="error-message"></div>
+                    </div>
+
+                    <div class="file-upload-group">
+                        <div class="file-upload-area" id="dropZone">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Drag & drop your resume here or</p>
+                            <label for="resumeFile" class="file-upload-btn">Browse Files</label>
+                            <input type="file" id="resumeFile" accept=".pdf,.doc,.docx" required hidden>
+                            <p class="file-info">Maximum file size: 5MB<br>Supported formats: PDF, DOC, DOCX</p>
+                        </div>
+                        <div class="selected-file" id="filePreview" style="display: none;">
+                            <div class="file-preview-header">
+                                <i class="fas fa-file-alt file-icon"></i>
+                                <div class="file-details">
+                                    <span class="file-name">No file selected</span>
+                                    <span class="file-meta">0 KB</span>
+                                </div>
+                                <button type="button" class="remove-file" title="Remove file">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                            <div class="file-preview-content">
+                                <div class="preview-placeholder">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span>Preview not available</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="error-message"></div>
+                    </div>
+
+                    <div class="form-options">
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="terms" required>
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-text">I agree to the <a href="#" class="terms-link">Terms</a> and <a href="#" class="privacy-link">Privacy Policy</a></span>
+                            </label>
+                            <div class="error-message"></div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <span class="btn-text">Upload Resume</span>
+                        <span class="btn-loader" style="display: none;">
+                            <i class="fas fa-spinner fa-spin"></i>
+                        </span>
+                    </button>
+                </form>
+
+                <div id="message" class="form-message" role="alert"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Coptal</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="press.html">Press</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="help.html">Help Center</a></li>
+                    <li><a href="guidelines.html">Guidelines</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="https://linkedin.com/company/coptal" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://twitter.com/coptal" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://facebook.com/coptal" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://instagram.com/coptal" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Coptal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="Project.js"></script>
+    <script src="post resume.js"></script>
+</body>
+</html>
